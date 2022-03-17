@@ -1,0 +1,451 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>io.github.adrianjuhl</groupId>
+  <artifactId>adrianjuhl-parent</artifactId>
+  <version>1.0.0</version>
+  <packaging>pom</packaging>
+
+  <name>adrianjuhl-parent</name>
+  <description>Parent project for my projects.</description>
+  <url>https://github.com/adrianjuhl/adrianjuhl-maven-parent</url>
+  <inceptionYear>2022</inceptionYear>
+
+  <licenses>
+    <license>
+      <name>MIT License</name>
+      <url>http://www.opensource.org/licenses/mit-license.php</url>
+    </license>
+  </licenses>
+
+  <developers>
+    <developer>
+      <id>1</id>
+      <name>Adrian Juhl</name>
+      <email>adrian.juhl@gmail.com</email>
+      <url>https://github.com/adrianjuhl</url>
+      <roles>
+        <role>Developer</role>
+      </roles>
+      <timezone>Australia/Adelaide</timezone>
+    </developer>
+  </developers>
+
+  <scm>
+    <connection>scm:git:github.com:adrianjuhl/adrianjuhl-maven-parent.git</connection>
+    <developerConnection>scm:git:github.com:adrianjuhl/adrianjuhl-maven-parent.git</developerConnection>
+    <url>https://github.com/adrianjuhl/adrianjuhl-maven-parent</url>
+  </scm>
+
+  <distributionManagement>
+    <snapshotRepository>
+      <id>ossrh</id>
+      <url>https://s01.oss.sonatype.org/content/repositories/snapshots/</url>
+    </snapshotRepository>
+    <repository>
+      <id>ossrh</id>
+      <url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+    </repository>
+  </distributionManagement>
+
+  <properties>
+    <maven.compiler.release>11</maven.compiler.release>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+    <!-- plugins -->
+    <maven-antrun-plugin-version>3.1.0</maven-antrun-plugin-version>
+    <maven-archetype-plugin-version>3.2.1</maven-archetype-plugin-version>
+    <maven-assembly-plugin-version>3.4.1</maven-assembly-plugin-version>
+    <maven-clean-plugin-version>3.2.0</maven-clean-plugin-version>
+    <maven-compiler-plugin-version>3.10.1</maven-compiler-plugin-version>
+    <maven-dependency-plugin-version>3.3.0</maven-dependency-plugin-version>
+    <maven-deploy-plugin-version>3.0.0</maven-deploy-plugin-version>
+    <maven-enforcer-plugin-version>3.1.0</maven-enforcer-plugin-version>
+    <maven-failsafe-plugin-version>3.0.0-M7</maven-failsafe-plugin-version>
+    <maven-gpg-plugin-version>3.0.1</maven-gpg-plugin-version>
+    <maven-install-plugin-version>3.0.0</maven-install-plugin-version>
+    <maven-jar-plugin-version>3.2.2</maven-jar-plugin-version>
+    <maven-javadoc-plugin-version>3.4.0</maven-javadoc-plugin-version>
+    <maven-project-info-reports-plugin-version>3.4.0</maven-project-info-reports-plugin-version>
+    <maven-release-plugin-version>3.0.0-M6</maven-release-plugin-version>
+    <maven-resources-plugin-version>3.2.0</maven-resources-plugin-version>
+    <maven-site-plugin-version>4.0.0-M2</maven-site-plugin-version>
+    <maven-source-plugin-version>3.2.1</maven-source-plugin-version>
+    <maven-surefire-plugin-version>3.0.0-M7</maven-surefire-plugin-version>
+    <build-helper-maven-plugin-version>3.3.0</build-helper-maven-plugin-version>
+    <dependency-check-maven-version>7.1.1</dependency-check-maven-version>
+    <gmaven-plugin-version>1.5</gmaven-plugin-version>
+    <versions-maven-plugin-version>2.11.0</versions-maven-plugin-version>
+
+    <!-- skin used in the generated maven site -->
+    <maven-fluido-skin-version>1.11.1</maven-fluido-skin-version>
+  </properties>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.apache.maven.skins</groupId>
+        <artifactId>maven-fluido-skin</artifactId>
+        <version>${maven-fluido-skin-version}</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-antrun-plugin</artifactId>
+          <version>${maven-antrun-plugin-version}</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-archetype-plugin</artifactId>
+          <version>${maven-archetype-plugin-version}</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-assembly-plugin</artifactId>
+          <version>${maven-assembly-plugin-version}</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-clean-plugin</artifactId>
+          <version>${maven-clean-plugin-version}</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>${maven-compiler-plugin-version}</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-dependency-plugin</artifactId>
+          <version>${maven-dependency-plugin-version}</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-deploy-plugin</artifactId>
+          <version>${maven-deploy-plugin-version}</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-enforcer-plugin</artifactId>
+          <version>${maven-enforcer-plugin-version}</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-failsafe-plugin</artifactId>
+          <version>${maven-failsafe-plugin-version}</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-gpg-plugin</artifactId>
+          <version>${maven-gpg-plugin-version}</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-install-plugin</artifactId>
+          <version>${maven-install-plugin-version}</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-jar-plugin</artifactId>
+          <version>${maven-jar-plugin-version}</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-javadoc-plugin</artifactId>
+          <version>${maven-javadoc-plugin-version}</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-project-info-reports-plugin</artifactId>
+          <version>${maven-project-info-reports-plugin-version}</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-release-plugin</artifactId>
+          <version>${maven-release-plugin-version}</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-resources-plugin</artifactId>
+          <version>${maven-resources-plugin-version}</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-site-plugin</artifactId>
+          <version>${maven-site-plugin-version}</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-source-plugin</artifactId>
+          <version>${maven-source-plugin-version}</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <version>${maven-surefire-plugin-version}</version>
+        </plugin>
+        <plugin>
+          <groupId>org.codehaus.gmaven</groupId>
+          <artifactId>gmaven-plugin</artifactId>
+          <version>${gmaven-plugin-version}</version>
+        </plugin>
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>build-helper-maven-plugin</artifactId>
+          <version>${build-helper-maven-plugin-version}</version>
+        </plugin>
+        <plugin>
+          <groupId>org.owasp</groupId>
+          <artifactId>dependency-check-maven</artifactId>
+          <version>${dependency-check-maven-version}</version>
+        </plugin>
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>versions-maven-plugin</artifactId>
+          <version>${versions-maven-plugin-version}</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-enforcer-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>enforce-minimum-maven-version</id>
+            <goals>
+              <goal>enforce</goal>
+            </goals>
+            <configuration>
+              <rules>
+                <requireMavenVersion>
+                  <version>3.2.5</version>
+                </requireMavenVersion>
+              </rules>    
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+
+  <profiles>
+    <profile>
+      <id>display-version-updates</id>
+      <!--
+        Prints version update info, including:
+          parent updates, dependency updates, plugin updates, and property updates.
+
+        Example usage:
+        $ mvn validate -Pdisplay-version-updates
+      -->
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>versions-maven-plugin</artifactId>
+            <executions>
+              <execution>
+                <phase>validate</phase>
+                <goals>
+                  <goal>display-parent-updates</goal>
+                  <goal>display-dependency-updates</goal>
+                  <goal>display-plugin-updates</goal>
+                  <goal>display-property-updates</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+    <profile>
+      <id>report-version-updates</id>
+      <!--
+        Include version update reports in the generated site, including:
+          dependency updates, plugin updates, and property updates
+
+        Example usage:
+        $ mvn clean validate site -Preport-version-updates
+      -->
+      <reporting>
+        <plugins>
+          <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>versions-maven-plugin</artifactId>
+            <reportSets>
+              <reportSet>
+                <reports>
+                  <report>dependency-updates-report</report>
+                  <report>plugin-updates-report</report>
+                  <report>property-updates-report</report>
+                </reports>
+              </reportSet>
+            </reportSets>
+          </plugin>
+        </plugins>
+      </reporting>
+    </profile>
+    <profile>
+      <id>display-dependency-check</id>
+      <!--
+        Print a dependency-check.
+
+        Example usage:
+        $ mvn clean verify -Pdisplay-dependency-check
+
+        See also:
+        https://jeremylong.github.io/DependencyCheck/dependency-check-maven/
+        https://github.com/jeremylong/DependencyCheck
+      -->
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.owasp</groupId>
+            <artifactId>dependency-check-maven</artifactId>
+            <executions>
+              <execution>
+                <goals>
+                  <goal>check</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+    <profile>
+      <id>report-dependency-check</id>
+      <!--
+        Include a dependency-check report in the generated site (and displayed in the build output).
+
+        Example usage:
+        $ mvn clean validate site -Preport-dependency-check
+
+        See also:
+        https://jeremylong.github.io/DependencyCheck/dependency-check-maven/
+        https://github.com/jeremylong/DependencyCheck
+      -->
+      <reporting>
+        <plugins>
+          <plugin>
+            <groupId>org.owasp</groupId>
+            <artifactId>dependency-check-maven</artifactId>
+            <reportSets>
+              <reportSet>
+                <reports>
+                  <report>aggregate</report>
+                </reports>
+              </reportSet>
+            </reportSets>
+          </plugin>
+        </plugins>
+      </reporting>
+    </profile>
+    <profile>
+      <id>display-all-project-properties</id>
+      <!--
+        Prints all the project property values.
+
+        By default the execution runs in the 'validate' phase. To have it run in another phase,
+        (perhaps so as to see a property that is set dynamically) set the property named
+        display-all-project-properties-phase to the name of the desired phase.
+
+        Example usage:
+        $ mvn validate -Pdisplay-all-project-properties
+        $ mvn clean package -Pdisplay-all-project-properties -Ddisplay-all-project-properties-phase=package
+      -->
+      <properties>
+        <display-all-project-properties-phase>validate</display-all-project-properties-phase>
+      </properties>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.codehaus.gmaven</groupId>
+            <artifactId>gmaven-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>display-all-project-properties</id>
+                <phase>${display-all-project-properties-phase}</phase>
+                <goals>
+                  <goal>execute</goal>
+                </goals>
+                <configuration>
+                  <source>
+                    for(propertyName in project.properties.propertyNames().sort())
+                    {
+                      println("[display-all-project-properties] " + propertyName + "=" + project.properties[propertyName]);
+                    }
+                  </source>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+    <profile>
+      <id>maven-central-release-requirements</id>
+      <!--
+        Run the plugins that do what's necessary to satisfy the requirements for deploying to maven central,
+        which includes:
+          - Supply source
+          - Supply Javadocs
+          - Sign files with GPG
+
+        See also:
+        https://central.sonatype.org/publish/publish-guide/
+        https://central.sonatype.org/publish/requirements/
+      -->
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-source-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>attach-sources</id>
+                <goals>
+                  <goal>jar-no-fork</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-javadoc-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>attach-javadocs</id>
+                <goals>
+                  <goal>jar</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-gpg-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>sign-artifacts</id>
+                <phase>verify</phase>
+                <goals>
+                  <goal>sign</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
+
+</project>
