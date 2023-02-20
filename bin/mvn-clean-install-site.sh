@@ -58,6 +58,7 @@ parse_script_params()
 
 initialize()
 {
+  set -o pipefail
   THIS_SCRIPT_PROCESS_ID=$$
   THIS_SCRIPT_DIRECTORY="$(dirname "$(readlink -f "${0}")")"
   initialize_abort_script_config

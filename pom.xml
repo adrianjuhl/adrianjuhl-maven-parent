@@ -4,7 +4,7 @@
 
   <groupId>io.github.adrianjuhl</groupId>
   <artifactId>adrianjuhl-parent</artifactId>
-  <version>1.0.0</version>
+  <version>1.1.0-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <name>adrianjuhl-parent</name>
@@ -53,34 +53,36 @@
     <maven.compiler.release>11</maven.compiler.release>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-
     <!-- plugins -->
-    <maven-antrun-plugin-version>3.1.0</maven-antrun-plugin-version>
-    <maven-archetype-plugin-version>3.2.1</maven-archetype-plugin-version>
-    <maven-assembly-plugin-version>3.4.1</maven-assembly-plugin-version>
-    <maven-clean-plugin-version>3.2.0</maven-clean-plugin-version>
-    <maven-compiler-plugin-version>3.10.1</maven-compiler-plugin-version>
-    <maven-dependency-plugin-version>3.3.0</maven-dependency-plugin-version>
-    <maven-deploy-plugin-version>3.0.0</maven-deploy-plugin-version>
-    <maven-enforcer-plugin-version>3.1.0</maven-enforcer-plugin-version>
-    <maven-failsafe-plugin-version>3.0.0-M7</maven-failsafe-plugin-version>
-    <maven-gpg-plugin-version>3.0.1</maven-gpg-plugin-version>
-    <maven-install-plugin-version>3.0.0</maven-install-plugin-version>
-    <maven-jar-plugin-version>3.2.2</maven-jar-plugin-version>
-    <maven-javadoc-plugin-version>3.4.0</maven-javadoc-plugin-version>
-    <maven-project-info-reports-plugin-version>3.4.0</maven-project-info-reports-plugin-version>
-    <maven-release-plugin-version>3.0.0-M6</maven-release-plugin-version>
-    <maven-resources-plugin-version>3.2.0</maven-resources-plugin-version>
-    <maven-site-plugin-version>4.0.0-M2</maven-site-plugin-version>
-    <maven-source-plugin-version>3.2.1</maven-source-plugin-version>
-    <maven-surefire-plugin-version>3.0.0-M7</maven-surefire-plugin-version>
-    <build-helper-maven-plugin-version>3.3.0</build-helper-maven-plugin-version>
-    <dependency-check-maven-version>7.1.1</dependency-check-maven-version>
-    <gmaven-plugin-version>1.5</gmaven-plugin-version>
-    <versions-maven-plugin-version>2.11.0</versions-maven-plugin-version>
+    <mavenAntrunPluginVersion>3.1.0</mavenAntrunPluginVersion>
+    <mavenArchetypePluginVersion>3.2.1</mavenArchetypePluginVersion>
+    <mavenArchetypePackagingVersion>${mavenArchetypePluginVersion}</mavenArchetypePackagingVersion>
+    <mavenAssemblyPluginVersion>3.4.2</mavenAssemblyPluginVersion>
+    <mavenCleanPluginVersion>3.2.0</mavenCleanPluginVersion>
+    <mavenCompilerPluginVersion>3.10.1</mavenCompilerPluginVersion>
+    <mavenDependencyPluginVersion>3.3.0</mavenDependencyPluginVersion>
+    <mavenDeployPluginVersion>3.0.0</mavenDeployPluginVersion>
+    <mavenEnforcerPluginVersion>3.1.0</mavenEnforcerPluginVersion>
+    <mavenFailsafePluginVersion>3.0.0-M7</mavenFailsafePluginVersion>
+    <mavenGpgPluginVersion>3.0.1</mavenGpgPluginVersion>
+    <mavenInstallPluginVersion>3.1.0</mavenInstallPluginVersion>
+    <mavenJarPluginVersion>3.3.0</mavenJarPluginVersion>
+    <mavenJavadocPluginVersion>3.4.1</mavenJavadocPluginVersion>
+    <mavenProjectInfoReportsPluginVersion>3.4.1</mavenProjectInfoReportsPluginVersion>
+    <mavenReleasePluginVersion>3.0.0-M7</mavenReleasePluginVersion>
+    <mavenResourcesPluginVersion>3.3.0</mavenResourcesPluginVersion>
+    <mavenSitePluginVersion>4.0.0-M4</mavenSitePluginVersion>
+    <mavenSourcePluginVersion>3.2.1</mavenSourcePluginVersion>
+    <mavenSurefirePluginVersion>3.0.0-M7</mavenSurefirePluginVersion>
+    <buildHelperMavenPluginVersion>3.3.0</buildHelperMavenPluginVersion>
+    <dependencyCheckMavenVersion>7.4.4</dependencyCheckMavenVersion>
+    <gmavenPluginVersion>1.5</gmavenPluginVersion>
+<!--    <versionsMavenPluginVersion>2.14.2</versionsMavenPluginVersion>-->
+    <versionsMavenPluginVersion>2.14.2</versionsMavenPluginVersion>
 
     <!-- skin used in the generated maven site -->
-    <maven-fluido-skin-version>1.11.1</maven-fluido-skin-version>
+<!--    <mavenFluidoSkinVersion>1.11.1</mavenFluidoSkinVersion>-->
+    <mavenFluidoSkinVersion>2.0.0-M3</mavenFluidoSkinVersion>
   </properties>
 
   <dependencyManagement>
@@ -88,128 +90,135 @@
       <dependency>
         <groupId>org.apache.maven.skins</groupId>
         <artifactId>maven-fluido-skin</artifactId>
-        <version>${maven-fluido-skin-version}</version>
+        <version>${mavenFluidoSkinVersion}</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
 
   <build>
+    <extensions>
+      <extension>
+        <groupId>org.apache.maven.archetype</groupId>
+        <artifactId>archetype-packaging</artifactId>
+        <version>${mavenArchetypePackagingVersion}</version>
+      </extension>
+    </extensions>
     <pluginManagement>
       <plugins>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-antrun-plugin</artifactId>
-          <version>${maven-antrun-plugin-version}</version>
+          <version>${mavenAntrunPluginVersion}</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-archetype-plugin</artifactId>
-          <version>${maven-archetype-plugin-version}</version>
+          <version>${mavenArchetypePluginVersion}</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-assembly-plugin</artifactId>
-          <version>${maven-assembly-plugin-version}</version>
+          <version>${mavenAssemblyPluginVersion}</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-clean-plugin</artifactId>
-          <version>${maven-clean-plugin-version}</version>
+          <version>${mavenCleanPluginVersion}</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-compiler-plugin</artifactId>
-          <version>${maven-compiler-plugin-version}</version>
+          <version>${mavenCompilerPluginVersion}</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-dependency-plugin</artifactId>
-          <version>${maven-dependency-plugin-version}</version>
+          <version>${mavenDependencyPluginVersion}</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-deploy-plugin</artifactId>
-          <version>${maven-deploy-plugin-version}</version>
+          <version>${mavenDeployPluginVersion}</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-enforcer-plugin</artifactId>
-          <version>${maven-enforcer-plugin-version}</version>
+          <version>${mavenEnforcerPluginVersion}</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-failsafe-plugin</artifactId>
-          <version>${maven-failsafe-plugin-version}</version>
+          <version>${mavenFailsafePluginVersion}</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-gpg-plugin</artifactId>
-          <version>${maven-gpg-plugin-version}</version>
+          <version>${mavenGpgPluginVersion}</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-install-plugin</artifactId>
-          <version>${maven-install-plugin-version}</version>
+          <version>${mavenInstallPluginVersion}</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-jar-plugin</artifactId>
-          <version>${maven-jar-plugin-version}</version>
+          <version>${mavenJarPluginVersion}</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-javadoc-plugin</artifactId>
-          <version>${maven-javadoc-plugin-version}</version>
+          <version>${mavenJavadocPluginVersion}</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-project-info-reports-plugin</artifactId>
-          <version>${maven-project-info-reports-plugin-version}</version>
+          <version>${mavenProjectInfoReportsPluginVersion}</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-release-plugin</artifactId>
-          <version>${maven-release-plugin-version}</version>
+          <version>${mavenReleasePluginVersion}</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-resources-plugin</artifactId>
-          <version>${maven-resources-plugin-version}</version>
+          <version>${mavenResourcesPluginVersion}</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-site-plugin</artifactId>
-          <version>${maven-site-plugin-version}</version>
+          <version>${mavenSitePluginVersion}</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-source-plugin</artifactId>
-          <version>${maven-source-plugin-version}</version>
+          <version>${mavenSourcePluginVersion}</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-surefire-plugin</artifactId>
-          <version>${maven-surefire-plugin-version}</version>
+          <version>${mavenSurefirePluginVersion}</version>
         </plugin>
         <plugin>
           <groupId>org.codehaus.gmaven</groupId>
           <artifactId>gmaven-plugin</artifactId>
-          <version>${gmaven-plugin-version}</version>
+          <version>${gmavenPluginVersion}</version>
         </plugin>
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>build-helper-maven-plugin</artifactId>
-          <version>${build-helper-maven-plugin-version}</version>
+          <version>${buildHelperMavenPluginVersion}</version>
         </plugin>
         <plugin>
           <groupId>org.owasp</groupId>
           <artifactId>dependency-check-maven</artifactId>
-          <version>${dependency-check-maven-version}</version>
+          <version>${dependencyCheckMavenVersion}</version>
         </plugin>
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>versions-maven-plugin</artifactId>
-          <version>${versions-maven-plugin-version}</version>
+          <version>${versionsMavenPluginVersion}</version>
         </plugin>
       </plugins>
     </pluginManagement>
@@ -230,6 +239,35 @@
                 </requireMavenVersion>
               </rules>    
             </configuration>
+          </execution>
+          <execution>
+            <id>enforce-no-snapshots</id>
+            <goals>
+              <goal>enforce</goal>
+            </goals>
+            <configuration>
+              <skip>${releaseBuildRequiresSnapshotDependencies}</skip>
+              <rules>
+                <requireReleaseDeps>
+                  <message>SNAPSHOT dependencies are not allowed for release builds!</message>
+                  <onlyWhenRelease>true</onlyWhenRelease>
+                </requireReleaseDeps>
+              </rules>
+              <fail>true</fail>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>build-helper-maven-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>parse-version</id>
+            <phase>validate</phase>
+            <goals>
+              <goal>parse-version</goal>
+            </goals>
           </execution>
         </executions>
       </plugin>
@@ -356,14 +394,14 @@
 
         By default the execution runs in the 'validate' phase. To have it run in another phase,
         (perhaps so as to see a property that is set dynamically) set the property named
-        display-all-project-properties-phase to the name of the desired phase.
+        displayAllProjectPropertiesPhase to the name of the desired phase.
 
         Example usage:
         $ mvn validate -Pdisplay-all-project-properties
-        $ mvn clean package -Pdisplay-all-project-properties -Ddisplay-all-project-properties-phase=package
+        $ mvn clean package -Pdisplay-all-project-properties -DdisplayAllProjectPropertiesPhase=package
       -->
       <properties>
-        <display-all-project-properties-phase>validate</display-all-project-properties-phase>
+        <displayAllProjectPropertiesPhase>validate</displayAllProjectPropertiesPhase>
       </properties>
       <build>
         <plugins>
@@ -373,7 +411,7 @@
             <executions>
               <execution>
                 <id>display-all-project-properties</id>
-                <phase>${display-all-project-properties-phase}</phase>
+                <phase>${displayAllProjectPropertiesPhase}</phase>
                 <goals>
                   <goal>execute</goal>
                 </goals>
