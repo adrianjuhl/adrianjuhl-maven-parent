@@ -71,24 +71,28 @@
     <mavenProjectInfoReportsPluginVersion>3.4.2</mavenProjectInfoReportsPluginVersion>
     <mavenReleasePluginVersion>3.0.0-M7</mavenReleasePluginVersion>
     <mavenResourcesPluginVersion>3.3.0</mavenResourcesPluginVersion>
-
     <mavenSitePluginVersion>3.12.1</mavenSitePluginVersion>
-<!--    <mavenSitePluginVersion>4.0.0-M5</mavenSitePluginVersion>-->
-
     <mavenSourcePluginVersion>3.2.1</mavenSourcePluginVersion>
     <mavenSurefirePluginVersion>3.0.0-M9</mavenSurefirePluginVersion>
     <buildHelperMavenPluginVersion>3.3.0</buildHelperMavenPluginVersion>
     <dependencyCheckMavenVersion>8.1.0</dependencyCheckMavenVersion>
     <gmavenPluginVersion>1.5</gmavenPluginVersion>
+    <gmavenplusPluginVersion>2.1.0</gmavenplusPluginVersion>
+    <templatingMavenPluginVersion>1.0.0</templatingMavenPluginVersion>
     <versionsMavenPluginVersion>2.14.2</versionsMavenPluginVersion>
 
+    <groovyAllVersion>3.0.15</groovyAllVersion>
     <!-- skin used in the generated maven site -->
     <mavenFluidoSkinVersion>1.11.2</mavenFluidoSkinVersion>
-<!--    <mavenFluidoSkinVersion>2.0.0-M3</mavenFluidoSkinVersion>-->
   </properties>
 
   <dependencyManagement>
     <dependencies>
+      <dependency>
+        <groupId>org.codehaus.groovy</groupId>
+        <artifactId>groovy-all</artifactId>
+        <version>${groovyAllVersion}</version>
+      </dependency>
       <dependency>
         <groupId>org.apache.maven.skins</groupId>
         <artifactId>maven-fluido-skin</artifactId>
@@ -206,6 +210,25 @@
           <groupId>org.codehaus.gmaven</groupId>
           <artifactId>gmaven-plugin</artifactId>
           <version>${gmavenPluginVersion}</version>
+        </plugin>
+        <plugin>
+          <groupId>org.codehaus.gmavenplus</groupId>
+          <artifactId>gmavenplus-plugin</artifactId>
+          <version>${gmavenplusPluginVersion}</version>
+          <dependencies>
+            <dependency>
+              <groupId>org.codehaus.groovy</groupId>
+              <artifactId>groovy-all</artifactId>
+              <version>${groovyAllVersion}</version>
+              <type>pom</type>
+              <scope>runtime</scope>
+            </dependency>
+          </dependencies>
+        </plugin>
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>templating-maven-plugin</artifactId>
+          <version>${templatingMavenPluginVersion}</version>
         </plugin>
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
