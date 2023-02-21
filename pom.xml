@@ -60,29 +60,31 @@
     <mavenAssemblyPluginVersion>3.4.2</mavenAssemblyPluginVersion>
     <mavenCleanPluginVersion>3.2.0</mavenCleanPluginVersion>
     <mavenCompilerPluginVersion>3.10.1</mavenCompilerPluginVersion>
-    <mavenDependencyPluginVersion>3.3.0</mavenDependencyPluginVersion>
-    <mavenDeployPluginVersion>3.0.0</mavenDeployPluginVersion>
-    <mavenEnforcerPluginVersion>3.1.0</mavenEnforcerPluginVersion>
-    <mavenFailsafePluginVersion>3.0.0-M7</mavenFailsafePluginVersion>
+    <mavenDependencyPluginVersion>3.5.0</mavenDependencyPluginVersion>
+    <mavenDeployPluginVersion>3.1.0</mavenDeployPluginVersion>
+    <mavenEnforcerPluginVersion>3.2.1</mavenEnforcerPluginVersion>
+    <mavenFailsafePluginVersion>3.0.0-M9</mavenFailsafePluginVersion>
     <mavenGpgPluginVersion>3.0.1</mavenGpgPluginVersion>
     <mavenInstallPluginVersion>3.1.0</mavenInstallPluginVersion>
     <mavenJarPluginVersion>3.3.0</mavenJarPluginVersion>
-    <mavenJavadocPluginVersion>3.4.1</mavenJavadocPluginVersion>
-    <mavenProjectInfoReportsPluginVersion>3.4.1</mavenProjectInfoReportsPluginVersion>
+    <mavenJavadocPluginVersion>3.5.0</mavenJavadocPluginVersion>
+    <mavenProjectInfoReportsPluginVersion>3.4.2</mavenProjectInfoReportsPluginVersion>
     <mavenReleasePluginVersion>3.0.0-M7</mavenReleasePluginVersion>
     <mavenResourcesPluginVersion>3.3.0</mavenResourcesPluginVersion>
-    <mavenSitePluginVersion>4.0.0-M4</mavenSitePluginVersion>
+
+    <mavenSitePluginVersion>3.12.1</mavenSitePluginVersion>
+<!--    <mavenSitePluginVersion>4.0.0-M5</mavenSitePluginVersion>-->
+
     <mavenSourcePluginVersion>3.2.1</mavenSourcePluginVersion>
-    <mavenSurefirePluginVersion>3.0.0-M7</mavenSurefirePluginVersion>
+    <mavenSurefirePluginVersion>3.0.0-M9</mavenSurefirePluginVersion>
     <buildHelperMavenPluginVersion>3.3.0</buildHelperMavenPluginVersion>
-    <dependencyCheckMavenVersion>7.4.4</dependencyCheckMavenVersion>
+    <dependencyCheckMavenVersion>8.1.0</dependencyCheckMavenVersion>
     <gmavenPluginVersion>1.5</gmavenPluginVersion>
-<!--    <versionsMavenPluginVersion>2.14.2</versionsMavenPluginVersion>-->
     <versionsMavenPluginVersion>2.14.2</versionsMavenPluginVersion>
 
     <!-- skin used in the generated maven site -->
-<!--    <mavenFluidoSkinVersion>1.11.1</mavenFluidoSkinVersion>-->
-    <mavenFluidoSkinVersion>2.0.0-M3</mavenFluidoSkinVersion>
+    <mavenFluidoSkinVersion>1.11.2</mavenFluidoSkinVersion>
+<!--    <mavenFluidoSkinVersion>2.0.0-M3</mavenFluidoSkinVersion>-->
   </properties>
 
   <dependencyManagement>
