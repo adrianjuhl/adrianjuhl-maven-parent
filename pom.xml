@@ -431,8 +431,8 @@
       <build>
         <plugins>
           <plugin>
-            <groupId>org.codehaus.gmaven</groupId>
-            <artifactId>gmaven-plugin</artifactId>
+            <groupId>org.codehaus.gmavenplus</groupId>
+            <artifactId>gmavenplus-plugin</artifactId>
             <executions>
               <execution>
                 <id>display-all-project-properties</id>
@@ -441,12 +441,14 @@
                   <goal>execute</goal>
                 </goals>
                 <configuration>
-                  <source>
-                    for(propertyName in project.properties.propertyNames().sort())
-                    {
-                      println("[display-all-project-properties] " + propertyName + "=" + project.properties[propertyName]);
-                    }
-                  </source>
+                  <scripts>
+                    <script>
+                      for(propertyName in project.properties.propertyNames().sort())
+                      {
+                        println("[display-all-project-properties] " + propertyName + "=" + project.properties[propertyName]);
+                      }
+                    </script>
+                  </scripts>
                 </configuration>
               </execution>
             </executions>
